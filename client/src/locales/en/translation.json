@@ -1,0 +1,28 @@
+{
+    "app_name": "Umbrella",
+    "nav": {
+        "dashboard": "Dashboard",
+        "users": "Users",
+        "login": "Login",
+        "logout": "Logout"
+    },
+    "common": {
+        "language": "Language",
+        "english": "English",
+        "arabic": "العربية"
+    },
+    "login": {
+        "welcome_back": "Welcome Back",
+        "subtitle": "Please sign in to continue",
+        "email_label": "Email Address",
+        "password_label": "Password",
+        "email_placeholder": "name@company.com",
+        "password_placeholder": "••••••••",
+        "sign_in_button": "Sign In",
+        "signing_in": "Signing in...",
+        "demo_button": "Use Demo Credentials",
+        "no_account": "Don't have an account?",
+        "create_account": "Create account",
+        "error_generic": "Login failed. Please check your connection and credentials."
+    }
+}

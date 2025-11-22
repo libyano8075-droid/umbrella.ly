@@ -1,0 +1,28 @@
+{
+    "app_name": "المظلة",
+    "nav": {
+        "dashboard": "لوحة التحكم",
+        "users": "المستخدمين",
+        "login": "تسجيل الدخول",
+        "logout": "تسجيل الخروج"
+    },
+    "common": {
+        "language": "اللغة",
+        "english": "English",
+        "arabic": "العربية"
+    },
+    "login": {
+        "welcome_back": "مرحباً بعودتك",
+        "subtitle": "يرجى تسجيل الدخول للمتابعة",
+        "email_label": "البريد الإلكتروني",
+        "password_label": "كلمة المرور",
+        "email_placeholder": "name@company.com",
+        "password_placeholder": "••••••••",
+        "sign_in_button": "تسجيل الدخول",
+        "signing_in": "جاري تسجيل الدخول...",
+        "demo_button": "استخدم بيانات تجريبية",
+        "no_account": "ليس لديك حساب؟",
+        "create_account": "إنشاء حساب",
+        "error_generic": "فشل تسجيل الدخول. يرجى التحقق من الاتصال وبيانات الاعتماد."
+    }
+}
