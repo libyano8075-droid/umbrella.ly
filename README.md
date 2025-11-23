@@ -1,73 +1,58 @@
-# React + TypeScript + Vite
+# Umbrella E-commerce Platform
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+Welcome to the **Umbrella** project! This repository contains the source code for the Umbrella e-commerce platform, split into three main parts:
 
-Currently, two official plugins are available:
+## 📂 Project Structure
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+-   **`umbrella/`**: **Storefront** (Next.js 16)
+    -   The public-facing website where customers can browse and shop.
+    -   Includes the Landing Page and future Shop features.
+    
+-   **`client/`**: **Admin Dashboard** (React + Vite)
+    -   The internal dashboard for managing users, orders, and settings.
+    -   Includes Login, Register, and User Management.
 
-## React Compiler
+-   **`server/`**: **Backend API** (Node.js + Express)
+    -   The central API server handling data, authentication, and business logic.
+    -   Connects to the database (SQLite/PostgreSQL).
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## 🚀 Getting Started
 
-## Expanding the ESLint configuration
+To run the full application, you will need to start each service independently.
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
-
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
-
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 1. Backend Server
+```bash
+cd server
+npm install
+npm run dev
 ```
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
-
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
-
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
+### 2. Admin Dashboard
+```bash
+cd client
+npm install
+npm run dev
 ```
+
+### 3. Storefront
+```bash
+cd umbrella
+npm install
+npm run dev
+```
+
+## 🛠️ Technologies
+
+-   **Frontend**: Next.js, React, Tailwind CSS, Vite
+-   **Backend**: Node.js, Express, TypeScript
+-   **Database**: SQLite / PostgreSQL
+-   **Icons**: Lucide React
+
+## 📝 Status
+
+-   **Landing Page**: ✅ Completed
+-   **Authentication**: ✅ Implemented (Backend + Admin Client)
+-   **User Management**: ✅ Implemented (Basic)
+-   **Shop/Cart**: 🚧 In Progress
+
+For more details, please refer to the documentation in each directory.
