@@ -6,7 +6,7 @@ import jwt from 'jsonwebtoken';
 const JWT_SECRET = process.env.JWT_SECRET || 'your-secret-key'; // In production, use .env
 
 export const register = async (req: Request, res: Response) => {
-    const { name, email, password } = req.body;
+    const { name, email, password, shipping_purpose, address, phone } = req.body;
     try {
         // Check if user exists
         const checkUserSql = `SELECT * FROM users WHERE email = ?`;
@@ -20,10 +20,13 @@ export const register = async (req: Request, res: Response) => {
         const salt = await bcrypt.genSalt(10);
         const passwordHash = await bcrypt.hash(password, salt);
 
-        const sql = `INSERT INTO users (name, email, password_hash, role) VALUES (?, ?, ?, 'user')`;
-        await query(sql, [name, email, passwordHash]);
+        // Generate Unique Code (e.g., UMB-TIMESTAMP-RANDOM)
+        const uniqueCode = `UMB-${Date.now().toString().slice(-6)}-${Math.floor(1000 + Math.random() * 9000)}`;
 
-        res.status(201).json({ message: 'User registered successfully' });
+        const sql = `INSERT INTO users (name, email, password_hash, role, shipping_purpose, address, phone, unique_code) VALUES (?, ?, ?, 'user', ?, ?, ?, ?)`;
+        await query(sql, [name, email, passwordHash, shipping_purpose, address, phone, uniqueCode]);
+
+        res.status(201).json({ message: 'User registered successfully', uniqueCode });
     } catch (error: any) {
         console.error("Registration error:", error);
         res.status(500).json({ message: 'Error registering user', error: error.message });
